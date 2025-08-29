@@ -1,4 +1,4 @@
-fatsapi
+fastapi
 uvicorn
 xgboost
 pandas
