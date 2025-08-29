@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🏆 F1 Podium Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🏎️ Predicted Podium</h1>
+
+    <div class="podium">
+        {% if podium|length >= 2 %}
+            <div class="second" data-position="2">
+                {{ podium[1][0] }}
+            </div>
+        {% endif %}
+
+        {% if podium|length >= 1 %}
+            <div class="first" data-position="1">
+                {{ podium[0][0] }}
+            </div>
+        {% endif %}
+
+        {% if podium|length >= 3 %}
+            <div class="third" data-position="3">
+                {{ podium[2][0] }}
+            </div>
+        {% endif %}
+    </div>
+
+    <a href="/" class="back-btn">⬅ Back</a>
+</div>
+</body>
+</html>

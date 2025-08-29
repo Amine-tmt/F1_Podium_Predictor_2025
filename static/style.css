@@ -1,0 +1,193 @@
+/* General */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(180deg, #1c1c1c 0%, #2e2e2e 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    width: 95%;
+    max-width: 1000px;
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ff0000;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Form Card */
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    text-align: left;
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Labels and Inputs */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #ddd;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 1rem;
+    background: #333;
+    color: #fff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #ff0000;
+    box-shadow: 0 0 8px rgba(255,0,0,0.5);
+}
+
+button {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, #ff0000, #800000);
+    color: white;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Team badge inside label */
+.team-badge {
+    display: inline-block;
+    background: #ff0000;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+/* Podium */
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.podium div {
+    background: linear-gradient(to top, #ff0000 0%, #000 100%);
+    color: white;
+    padding: 10px;
+    border-radius: 6px 6px 0 0;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+}
+
+/* Different heights for podium positions */
+.first { height: 140px; width: 100px; }
+.second { height: 110px; width: 80px; }
+.third { height: 90px; width: 80px; }
+
+/* Podium numbers */
+.podium div::before {
+    content: attr(data-position);
+    position: absolute;
+    top: -25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Back button */
+a.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #800000;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+a.back-btn:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+}
+
+/* Form adjustments */
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; /* more spacing between fields */
+    margin-top: 20px;
+    text-align: left;
+    background: #222;
+    padding: 25px; /* more padding for breathing space */
+    border-radius: 12px;
+    align-items: start; /* aligns all input groups to top */
+}
+
+/* Input groups */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    margin-bottom: 8px; /* more space between label and input */
+    color: #ddd;
+}
+
+/* Inputs */
+input, select {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 1rem;
+    background: #333;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Button spans full width */
+button {
+    grid-column: 1 / -1; /* spans entire form width */
+    margin-top: 15px;
+}

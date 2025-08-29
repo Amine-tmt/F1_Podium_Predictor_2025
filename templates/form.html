@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🏎️ F1 Podium Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>F1 Podium Predictor (2025)</h1>
+
+    <form action="/predict" method="post" class="card">
+        <!-- Year and Circuit in full-width container -->
+        <div style="grid-column: 1 / -1; display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 150px;">
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" value="2025" required>
+            </div>
+
+            <div style="flex: 2; min-width: 200px;">
+                <label for="circuit">Circuit:</label>
+                <select id="circuit" name="circuit" required>
+                    {% for circuit in circuits %}
+                        <option value="{{ circuit }}">{{ circuit }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <!-- Drivers + grid positions -->
+        {% for driver, team in drivers.items() %}
+            <div>
+                <label for="{{ driver }}">{{ driver }}
+                    <span class="team-badge">{{ team }}</span>
+                </label>
+                <input type="number" id="{{ driver }}" name="{{ driver }}" min="1" max="20" required>
+            </div>
+        {% endfor %}
+
+        <button type="submit">🚀 Predict Podium</button>
+    </form>
+</div>
+</body>
+</html>
