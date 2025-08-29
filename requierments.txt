@@ -1,7 +1,8 @@
 fatsapi
 uvicorn
-xgb
+xgboost
 pandas
 numpy
-sklearn
+scikit-learn
 joblib
+os
